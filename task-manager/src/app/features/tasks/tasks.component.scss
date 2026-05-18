@@ -1,0 +1,45 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f4f6fb;
+}
+
+mat-toolbar {
+  flex-shrink: 0;
+  gap: 8px;
+  padding: 0 24px;
+  height: 66px;
+  background: #ffffff;
+  color: #111827;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+mat-toolbar mat-icon {
+  color: #3b82f6;
+}
+
+.spacer { flex: 1; }
+.username {
+  font-size: 14px;
+  opacity: 0.75;
+  margin-right: 8px;
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.list-panel {
+  width: 100%;
+  max-width: 1280px;
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}

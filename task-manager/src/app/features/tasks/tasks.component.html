@@ -1,0 +1,28 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary">
+  <mat-icon>task_alt</mat-icon>
+  <span style="margin-left: 8px; font-size: 20px;">Task Manager</span>
+  <span class="spacer"></span>
+    <span class="username">{{ username }}</span>
+    <button mat-icon-button (click)="logout()" matTooltip="Logout">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>
+
+@if (loading()) {
+  <mat-progress-bar mode="indeterminate" />
+}
+
+<!-- Main layout: list left -->
+<div class="main-layout">
+  <div class="list-panel">
+    <app-task-list
+      [tasks]="tasks()"
+      [selectedTaskId]="editingTask()?.id ?? null"
+      (editTask)="onEditTask($event)"
+      (deleteTask)="onDeleteTask($event)"
+      (toggleTask)="onToggleTask($event)"
+      (openTask)="openTaskDialog()"
+    ></app-task-list>
+  </div>
+</div>
